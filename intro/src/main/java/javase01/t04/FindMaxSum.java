@@ -1,10 +1,10 @@
 package javase01.t04;
 
-public class FindMaxSum {
+class FindMaxSum {
 
-    public static double findMaxSum (double... vals) {
+    static double findMaxSum (double... vals) {
         if (vals.length % 2 != 0 || vals.length == 0) {
-            System.out.println("Incorrect number of vals. Please input an even number of vals");
+            System.out.println("Incorrect number of vals. Please input an even number of vals.");
             return 0.0;
         }
         int posLeft = 0;
