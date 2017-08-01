@@ -6,7 +6,7 @@ import static java.lang.Integer.*;
 
 public class Main {
 
-    private static final int SIZE = 3;
+    private static final int SIZE = 100;
 
     private static Scanner scanner = new Scanner(System.in);
 

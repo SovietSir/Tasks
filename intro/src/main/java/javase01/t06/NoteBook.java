@@ -4,20 +4,37 @@ import java.util.Arrays;
 
 import static java.lang.Integer.*;
 
+/**
+ * NoteBook class for store NoteEntries
+ */
 public class NoteBook {
 
+
+    /**
+     * An array, that contains NoteEntries.
+     */
+    private NoteEntry [] NoteBook;
     private int size;
     private int index = 0;
     private final int reSize = 10;
-    private NoteEntry [] NoteBook;
 
 
-
+    /**
+     * Initializes a newly created NoteBook with {@code size} parameter.
+     *
+     * @param size The initial value of the {@code size} field
+     */
     NoteBook(int size){
-        NoteBook = new NoteEntry[size];
         this.size = size;
+        NoteBook = new NoteEntry[size];
     }
 
+    /**
+     * Method adds new NoteEntry, initialized by <code>String</code> title
+     * and <code>String</code> text parameters into NoteBook. Position of new entry assigns by index variable.
+     * @param title to be stored
+     * @param text to be stored
+     */
     public void addNote(String title, String text) {
         if (index == MAX_VALUE) {
             System.out.println("NoteBook is full. Please, delete note first.");
@@ -29,6 +46,10 @@ public class NoteBook {
             expandNoteBook();
     }
 
+    /**
+     * Method removes NoteEntry on <code>int</code> index position in NoteBook array
+     * @param index specifying position of removed NoteEntry in NoteBook array
+     */
     public void removeNote(int index) {
         if (checkIndex (index)) {
             for (int i = index; i < this.index; i++) {
@@ -40,6 +61,11 @@ public class NoteBook {
         }
     }
 
+    /**
+     * Method edits NoteEntry <code>String</code> title on <code>int</code> index position in NoteBook array
+     * @param index specifying position of edited NoteEntry in NoteBook array
+     * @param title to be replaced in NoteEntry
+     */
     public void editNoteTitle(int index, String title) {
         if (checkIndex (index)) {
             NoteBook[index].setTitle(title);
@@ -47,6 +73,11 @@ public class NoteBook {
         }
     }
 
+    /**
+     * Method edits NoteEntry <code>String</code> text on <code>int</code> index position in NoteBook array
+     * @param index specifying position of edited NoteEntry in NoteBook array
+     * @param text to be replaced in NoteEntry
+     */
     public void editNoteText(int index, String text) {
         if (checkIndex (index)) {
             NoteBook[index].setText(text);
@@ -54,6 +85,9 @@ public class NoteBook {
         }
     }
 
+    /**
+     * Method outputs all NoteEntries in NoteBook in a textual form
+     */
     public void showNotes() {
         if(index == 0) {
             System.out.println("NoteBook is empty. Please, add note first.");
@@ -63,7 +97,10 @@ public class NoteBook {
             System.out.printf("Index: %d  %s%n", i, NoteBook[i]);
         }
     }
-
+    /**
+     * Method checks that <code>int</code> index is inside of NoteBook array scope
+     * @param index specifying checking index
+     */
     public boolean checkIndex (int index) {
         if (index < 0 || index >= this.index) {
             System.out.println("Note with that index not found. Please, enter correct index.");
