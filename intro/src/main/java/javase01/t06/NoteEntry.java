@@ -29,7 +29,7 @@ public class NoteEntry {
     public String toString(){
         return   "Note title: "
                 + getTitle()
-                + "Note text: "
+                + "  Note text: "
                 + getText();
     }
 }

@@ -7,8 +7,8 @@ import static java.lang.Integer.*;
 public class NoteBook {
 
     private int size;
-    private int reSize;
     private int index = 0;
+    private final int reSize = 10;
     private NoteEntry [] NoteBook;
 
 
@@ -16,7 +16,6 @@ public class NoteBook {
     NoteBook(int size){
         NoteBook = new NoteEntry[size];
         this.size = size;
-        reSize = (int)(size * 0.1);
     }
 
     public void addNote(String title, String text) {
@@ -41,11 +40,17 @@ public class NoteBook {
         }
     }
 
-    public void editNote(int index, String title, String text) {
+    public void editNoteTitle(int index, String title) {
         if (checkIndex (index)) {
             NoteBook[index].setTitle(title);
+            System.out.println("Note title successfully edited!");
+        }
+    }
+
+    public void editNoteText(int index, String text) {
+        if (checkIndex (index)) {
             NoteBook[index].setText(text);
-            System.out.println("Note successfully edited!");
+            System.out.println("Note text successfully edited!");
         }
     }
 
