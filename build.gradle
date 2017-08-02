@@ -27,7 +27,7 @@ subprojects {
 //                'com.github.Vyacheslav-Lapin.Hegel:hegel-core:master-SNAPSHOT',
 //                'io.vavr:vavr:+'
 
-//        compileOnly 'org.projectlombok:lombok:+',
+        compileOnly 'org.projectlombok:lombok:+'
 //                'edu.washington.cs.types.checker:checker-framework:+',
 //                'org.openjdk.jmh:jmh-generator-annprocess:+'
 
