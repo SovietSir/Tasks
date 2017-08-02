@@ -35,7 +35,7 @@ public class Pen {
 
     }
 
-    public Pen(String price, String color, PenType penType, InkType inkType, Material material, String brand, String countryOfManufacturing) {
+    public Pen(String price, String color, String brand, String countryOfManufacturing, PenType penType, InkType inkType, Material material) {
         this.price = price;
         this.color = color;
         this.brand = brand;
